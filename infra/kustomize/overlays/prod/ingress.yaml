@@ -1,0 +1,21 @@
+apiVersion: networking.k8s.io/v1
+kind: Ingress
+metadata:
+  name: example
+  labels:
+    ingress-tenant: default
+spec:
+  tls:
+  - hosts:
+      - example.localhost
+  rules:
+  - host: example.localhost
+    http:
+      paths:
+      - backend:
+          service:
+            name: example
+            port:
+              number: 4000
+        path: /
+        pathType: ImplementationSpecific
