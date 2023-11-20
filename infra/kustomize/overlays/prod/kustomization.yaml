@@ -1,11 +1,7 @@
 resources:
   - ../base
-  - route.yaml
 
 nameSuffix: -prod
-
-patches: 
-  - patches.yaml
 
 images:
   - name: ghcr.io/nkzk/go-stdout
