@@ -2,3 +2,5 @@ resources:
   - ../../base
 
 nameSuffix: -dev
+
+namespace: example-dev

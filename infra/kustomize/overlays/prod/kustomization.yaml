@@ -2,6 +2,9 @@ resources:
   - ../../base
 
 nameSuffix: -prod
+
+namespace: example-prod
+
 images:
   - name: ghcr.io/nkzk/go-stdout
     newName: ghcr.io/nkzk/example-go-image
