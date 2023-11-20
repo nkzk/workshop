@@ -3,6 +3,8 @@ kind: Application
 metadata:
   name: 'example'
   namespace: argocd
+  annotations:
+    documentation: "https://argo-cd.readthedocs.io/en/stable/operator-manual/declarative-setup/#applications"
 spec:
   destination:
     server: https://kubernetes.default.svc
