@@ -1,0 +1,28 @@
+apiVersion: argoproj.io/v1alpha1
+kind: ApplicationSet
+metadata:
+  name: example-appset
+  namespace: argocd
+  annotations:
+    documentation: "https://argo-cd.readthedocs.io/en/stable/user-guide/application-set/"
+spec:
+  generators:
+    - git:
+        directories:
+          - path: "infra/kustomize/overlays/*"
+        repoURL: 'https://github.com/nkzk/workshop.git'
+        revision: main
+  syncPolicy:
+    preserveResourcesOnDeletion: true
+  template:
+    metadata:
+      name: 'example-{{path.basename}}'
+    spec:
+      destination:
+        namespace: 'example-{{path.basename}}'
+        server: 'https://kubernetes.default.svc'
+      project: workshop
+      source:
+        path: '{{path}}'
+        repoURL: 'https://github.com/nkzk/workshop.git'
+        targetRevision: main
