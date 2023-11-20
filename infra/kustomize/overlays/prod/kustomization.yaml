@@ -1,8 +1,7 @@
 resources:
-  - ../base
+  - ../../base
 
 nameSuffix: -prod
-
 images:
   - name: ghcr.io/nkzk/go-stdout
     newName: ghcr.io/nkzk/example-go-image
