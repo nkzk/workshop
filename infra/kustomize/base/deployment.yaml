@@ -1,0 +1,25 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  labels:
+    project: example-project
+    owner: example-owner
+  name: example
+spec:
+  replicas: 1
+  selector:
+    matchLabels:
+      app: example
+  strategy:
+    type: Recreate
+  template:
+    metadata:
+      labels:
+        app: example
+    spec:
+      containers:
+      - image: ghcr.io/nkzk/go-stdout:main
+        name: example
+        resources: {}
+        ports:
+        - containerPort: 8080
