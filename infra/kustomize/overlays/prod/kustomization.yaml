@@ -1,0 +1,13 @@
+resources:
+  - ../base
+  - route.yaml
+
+nameSuffix: -prod
+
+patches: 
+  - patches.yaml
+
+images:
+  - name: ghcr.io/nkzk/go-stdout
+    newName: ghcr.io/nkzk/example-go-image
+    newTag: latest
