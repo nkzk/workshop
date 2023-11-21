@@ -5,18 +5,20 @@ Example repository demonstrating gitops with Kustomize and ArgoCD.
 
 ## 1 - Fork this repository
 
-## 2 - Change namespace in `infra/kustomize/*`
+## 2 - Change namespace infrastructure-files
 
-Change `namespace: ` to something unique in `kustomization.yaml` in all overlays. Keep the `-dev`/`-test`/`-prod` suffixes.
+Change the following `kustomization` files:
 
-
-```
+```bash
 infra/kustomize/base/kustomization.yaml
 infra/kustomize/overlays/dev/kustomization.yaml
 infra/kustomize/overlays/test/kustomization.yaml
 infra/kustomize/overlays/prod/kustomization.yaml
 ```
 
+Change `namespace` from "example" to something unique in all mentioned overlays.
+
+Important: Keep the `-dev`/`-test`/`-prod` suffixes.
 
 ## 3 - Change name of application and application-set in `argo/infra`
 
@@ -100,6 +102,9 @@ Delete your bootstrap application in ArgoCD ('Delete')
 ### References/Notes
 
 ArgoCD: https://argo-cd.readthedocs.io/en/stable/
+ArgoCD + Kustomize: https://argo-cd.readthedocs.io/en/stable/user-guide/kustomize/
+ArgoCD ApplicationSets: https://argo-cd.readthedocs.io/en/stable/user-guide/application-set/
+
 OpenShift: https://docs.openshift.com/
 Kubernetes: https://kubernetes.io/docs/home/
 
