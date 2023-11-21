@@ -20,7 +20,7 @@ Change `namespace` from "example" to something unique in all mentioned overlays.
 
 Important: Keep the `-dev`/`-test`/`-prod` suffixes.
 
-## 3 - Change name of Argo-resources in `argo/infra`
+## 3 - Change name and destination of Argo-resources in `argo/infra`
 
 Change `.metadata.name` in the following files to something of your choosing to avoid name-collisions:
 
@@ -29,6 +29,12 @@ Change `.metadata.name` in the following files to something of your choosing to 
 ./argo/infra/example-application.yaml
 ./argo/bootstrap-application.yaml
 ```
+
+
+Change "repoURL" (2x) in `./argo/infra/application-set.yaml`:
+    - Change `.spec.generators[].git.repoURL` to your git url
+    - Change `spec.template.spec.source.repoURL` to your git url
+
 
 ### 3.5 - Push the changes to your git repository
 
