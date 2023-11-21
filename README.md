@@ -30,6 +30,10 @@ Change `.metadata.name` in the following files to something of your choosing to 
 ./argo/bootstrap-application.yaml
 ```
 
+### 3.5 - Push the changes to your git repository
+
+Push the changes in step 2 and 3 to your forked git repository.
+
 ## 4 - Create a new Argo Application:
 
 Argo -> New app ->
