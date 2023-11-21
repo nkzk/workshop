@@ -63,7 +63,7 @@ Delete your application and applicationset in Argo
 
 ## 7 - Create a bootstrap application to create an Application and ApplicationSet the Gitops way.
 
-
+Create `./argo/bootstrap-application.yaml` in OpenShift Console ( +-button), or in the terminal: `oc apply -f ./argo/bootstrap-application.yaml`
 
 ## 8 - Bonus: Create an OpenShift Route to expose web application in "./infra/kustomize/overlays/prod"
 
