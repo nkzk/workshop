@@ -49,13 +49,13 @@ Update `./argo/infra/application-set.yaml`:
 
 To point the `ApplicationSet` to your git repository, change "repoURL" references:
 
-    - Change `.spec.generators[].git.repoURL` to your git url
-    - Change `spec.template.spec.source.repoURL` to your git url
+- Change `.spec.generators[].git.repoURL` to your git url
+- Change `spec.template.spec.source.repoURL` to your git url
 
 
 Change the generated application template name to avoid namecollisions:
 
-    - Change `.spec.template.metadata.name`
+- Change `.spec.template.metadata.name`
 
 
 ## :rocket: 3 - Push the changes to your git repository 
