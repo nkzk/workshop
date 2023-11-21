@@ -4,6 +4,7 @@ Example repository demonstrating gitops with Kustomize and ArgoCD.
 
 ## :books: 0 - Glossary
 
+- CRD: Kubernetes Custom Resource Definitions. ArgoCD expands the kubernetes api with new resources, for example: "Application", "ApplicationSet" (CRDs)
 - Application:  A group of Kubernetes resources as defined by a manifest. This is a Custom Resource Definition (CRD).
 - ApplicationSet: This CRD is used to generate multiple Applications based on different 'generators' - for example directories in a path.
 
