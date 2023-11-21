@@ -20,9 +20,9 @@ Change `namespace` from "example" to something unique in all mentioned overlays.
 
 Important: Keep the `-dev`/`-test`/`-prod` suffixes.
 
-## 3 - Change name of application and application-set in `argo/infra`
+## 3 - Change name of Argo-resources in `argo/infra`
 
-Change `.metadata.name` in the following files to something of your choosing:
+Change `.metadata.name` in the following files to something of your choosing to avoid name-collisions:
 
 ```
 ./argo/infra/application-set.yaml
