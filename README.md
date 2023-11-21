@@ -3,7 +3,9 @@
 Example repository demonstrating gitops with Kustomize and ArgoCD.
 
 
-## 1 - Fork this repository
+## 1 - Fork
+
+Fork this repository.
 
 ## 2 - Change namespace infrastructure-files
 
@@ -30,15 +32,17 @@ Change `.metadata.name` in the following files to something of your choosing to 
 ./argo/bootstrap-application.yaml
 ```
 
-### More changes in ApplicationSet
+### Change ApplicationSet
 
 
 To point the ApplicationSet to your git repository, change "repoURL" references in `./argo/infra/application-set.yaml`:
+
     - Change `.spec.generators[].git.repoURL` to your git url
     - Change `spec.template.spec.source.repoURL` to your git url
 
 
 Change the generated application template name to avoid namecollisions:
+
     - Change `.spec.template.metadata.name`
 
 
@@ -118,11 +122,15 @@ Delete your bootstrap application in ArgoCD ('Delete')
 ### References/Notes
 
 ArgoCD: https://argo-cd.readthedocs.io/en/stable/
+
 ArgoCD + Kustomize: https://argo-cd.readthedocs.io/en/stable/user-guide/kustomize/
+
 ArgoCD ApplicationSets: https://argo-cd.readthedocs.io/en/stable/user-guide/application-set/
 
 OpenShift: https://docs.openshift.com/
+
 Kubernetes: https://kubernetes.io/docs/home/
 
 Main example image used: https://github.com/nkzk/go-stdout
+
 Example web application: https://github.com/nkzk/example-go-image
