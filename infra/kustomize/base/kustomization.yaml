@@ -3,4 +3,5 @@ resources:
   - service.yaml
   - namespace.yaml
   - admin-rolebinding.yaml
+
 namespace: example
