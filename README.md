@@ -91,3 +91,17 @@ spec:
 ## Delete your bootstrap application
 
 Delete your bootstrap application in ArgoCD ('Delete')
+
+
+
+
+
+
+### References/Notes
+
+ArgoCD: https://argo-cd.readthedocs.io/en/stable/
+OpenShift: https://docs.openshift.com/
+Kubernetes: https://kubernetes.io/docs/home/
+
+Main example image used: https://github.com/nkzk/go-stdout
+Example web application: https://github.com/nkzk/example-go-image
