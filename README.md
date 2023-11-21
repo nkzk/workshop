@@ -1,15 +1,21 @@
-# Workshop
+# :construction: Workshop :construction:
 
 Example repository demonstrating gitops with Kustomize and ArgoCD.
 
+## :books: 0 - Glossary
 
-## 1 - Fork :fork_and_knife:
+- Application:  A group of Kubernetes resources as defined by a manifest. This is a Custom Resource Definition (CRD).
+- ApplicationSet: This CRD is used to generate multiple Applications based on different 'generators' - for example directories in a path.
+
+## :fork_and_knife: 1 - Fork 
 
 Fork this repository.
 
-## 2 - Change namespace infrastructure-files :pencil:
+## :pencil: 2 - Change infrastructure-files:
 
-Change the following `kustomization` files:
+### 2.1
+
+Change `namespace` in the following files:
 
 ```bash
 infra/kustomize/base/kustomization.yaml
@@ -18,24 +24,30 @@ infra/kustomize/overlays/test/kustomization.yaml
 infra/kustomize/overlays/prod/kustomization.yaml
 ```
 
-Change `namespace` from "example" to something unique in all mentioned overlays.
+
+Change `namespace` in the above files from "example" to something unique to avoid naming-collisions.
 
 Important: Keep the `-dev`/`-test`/`-prod` suffixes.
 
-## 3 - Change name and destination of Argo-resources in `argo/infra` :pencil:
 
-Change `.metadata.name` in the following files to something of your choosing to avoid name-collisions:
+### 2.2
 
-```
+Update `.metadata.name` in the following files:
+
+```bash
 ./argo/infra/application-set.yaml
 ./argo/infra/example-application.yaml
 ./argo/bootstrap-application.yaml
 ```
 
-### Change ApplicationSet :pencil:
+Change the `.metadata.name` in the above files to something unique and of your choosing to avoid name-collisions.
 
 
-To point the ApplicationSet to your git repository, change "repoURL" references in `./argo/infra/application-set.yaml`:
+### 2.3
+
+Update `./argo/infra/application-set.yaml`:
+
+To point the `ApplicationSet` to your git repository, change "repoURL" references:
 
     - Change `.spec.generators[].git.repoURL` to your git url
     - Change `spec.template.spec.source.repoURL` to your git url
@@ -46,11 +58,11 @@ Change the generated application template name to avoid namecollisions:
     - Change `.spec.template.metadata.name`
 
 
-### 3.5 - Push the changes to your git repository :rocket:
+### :rocket: 3.5 - Push the changes to your git repository 
 
 Push the changes in step 2 and 3 to your forked git repository.
 
-## 4 - Create a new Argo Application :construction:
+## :construction: 4 - Create a new Argo Application 
 
 Argo -> New app ->
 
@@ -72,22 +84,22 @@ or
 
 `oc apply -f argo/infra/example-application.yaml`
 
-## 5 - Create a new ApplicationSet :construction:
+## :construction: 5 - Create a new ApplicationSet
 
 `oc apply -f argo/infra/application-set.yaml`
 
 or use OpenShift GUI (+)-button
 
 
-## 6 - Delete your application and applicationset :fire:
+## :fire: 6 - Delete your application and applicationset 
 
 Delete your application and applicationset in Argo
 
-## 7 - Create a bootstrap application to create an Application and ApplicationSet the Gitops way :rocket:
+## :rocket: 7 - Create a bootstrap application to create an Application and ApplicationSet the Gitops way 
 
 Create `./argo/bootstrap-application.yaml` in OpenShift Console ( +-button), or in the terminal: `oc apply -f ./argo/bootstrap-application.yaml`
 
-## 8 - Bonus: Create an OpenShift Route to expose web application in "./infra/kustomize/overlays/prod" :apple:
+## :apple: 8 - Bonus: Create an OpenShift Route to expose web application in "./infra/kustomize/overlays/prod" 
 
 Example: (Modify name, namespace ('prod'), and host)
 
@@ -110,19 +122,21 @@ spec:
   wildcardPolicy: None
 ```
 
-## Delete your bootstrap application :fire:
+## :fire: Delete your bootstrap application 
 
 Delete your bootstrap application in ArgoCD ('Delete')
 
 
 
-### References/Notes
+### :books: References
 
 ArgoCD: https://argo-cd.readthedocs.io/en/stable/
 
 ArgoCD + Kustomize: https://argo-cd.readthedocs.io/en/stable/user-guide/kustomize/
 
 ArgoCD ApplicationSets: https://argo-cd.readthedocs.io/en/stable/user-guide/application-set/
+
+ArgoCD App of App patter: https://argo-cd.readthedocs.io/en/stable/operator-manual/declarative-setup/#app-of-apps
 
 OpenShift: https://docs.openshift.com/
 
