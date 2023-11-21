@@ -137,7 +137,7 @@ ArgoCD + Kustomize: https://argo-cd.readthedocs.io/en/stable/user-guide/kustomiz
 
 ArgoCD ApplicationSets: https://argo-cd.readthedocs.io/en/stable/user-guide/application-set/
 
-ArgoCD App of App patter: https://argo-cd.readthedocs.io/en/stable/operator-manual/declarative-setup/#app-of-apps
+ArgoCD App of App pattern: https://argo-cd.readthedocs.io/en/stable/operator-manual/declarative-setup/#app-of-apps
 
 OpenShift: https://docs.openshift.com/
 
