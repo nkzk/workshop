@@ -58,7 +58,7 @@ Change the generated application template name to avoid namecollisions:
     - Change `.spec.template.metadata.name`
 
 
-### :rocket: 3 - Push the changes to your git repository 
+## :rocket: 3 - Push the changes to your git repository 
 
 Push the changes in step 2 and 3 to your forked git repository.
 
