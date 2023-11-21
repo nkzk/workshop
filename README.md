@@ -30,10 +30,16 @@ Change `.metadata.name` in the following files to something of your choosing to 
 ./argo/bootstrap-application.yaml
 ```
 
+### More changes in ApplicationSet
 
-Change "repoURL" (2x) in `./argo/infra/application-set.yaml`:
+
+To point the ApplicationSet to your git repository, change "repoURL" references in `./argo/infra/application-set.yaml`:
     - Change `.spec.generators[].git.repoURL` to your git url
     - Change `spec.template.spec.source.repoURL` to your git url
+
+
+Change the generated application template name to avoid namecollisions:
+    - Change `.spec.template.metadata.name`
 
 
 ### 3.5 - Push the changes to your git repository
