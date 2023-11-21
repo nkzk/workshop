@@ -3,11 +3,11 @@
 Example repository demonstrating gitops with Kustomize and ArgoCD.
 
 
-## 1 - Fork
+## 1 - Fork :fork_and_knife:
 
 Fork this repository.
 
-## 2 - Change namespace infrastructure-files
+## 2 - Change namespace infrastructure-files :pencil:
 
 Change the following `kustomization` files:
 
@@ -22,7 +22,7 @@ Change `namespace` from "example" to something unique in all mentioned overlays.
 
 Important: Keep the `-dev`/`-test`/`-prod` suffixes.
 
-## 3 - Change name and destination of Argo-resources in `argo/infra`
+## 3 - Change name and destination of Argo-resources in `argo/infra` :pencil:
 
 Change `.metadata.name` in the following files to something of your choosing to avoid name-collisions:
 
@@ -32,7 +32,7 @@ Change `.metadata.name` in the following files to something of your choosing to 
 ./argo/bootstrap-application.yaml
 ```
 
-### Change ApplicationSet
+### Change ApplicationSet :pencil:
 
 
 To point the ApplicationSet to your git repository, change "repoURL" references in `./argo/infra/application-set.yaml`:
@@ -46,11 +46,11 @@ Change the generated application template name to avoid namecollisions:
     - Change `.spec.template.metadata.name`
 
 
-### 3.5 - Push the changes to your git repository
+### 3.5 - Push the changes to your git repository :rocket:
 
 Push the changes in step 2 and 3 to your forked git repository.
 
-## 4 - Create a new Argo Application:
+## 4 - Create a new Argo Application :construction:
 
 Argo -> New app ->
 
@@ -72,22 +72,22 @@ or
 
 `oc apply -f argo/infra/example-application.yaml`
 
-## 5 - Create a new ApplicationSet
+## 5 - Create a new ApplicationSet :construction:
 
 `oc apply -f argo/infra/application-set.yaml`
 
 or use OpenShift GUI (+)-button
 
 
-## 6 - Delete your application and applicationset
+## 6 - Delete your application and applicationset :fire:
 
 Delete your application and applicationset in Argo
 
-## 7 - Create a bootstrap application to create an Application and ApplicationSet the Gitops way.
+## 7 - Create a bootstrap application to create an Application and ApplicationSet the Gitops way :rocket:
 
 Create `./argo/bootstrap-application.yaml` in OpenShift Console ( +-button), or in the terminal: `oc apply -f ./argo/bootstrap-application.yaml`
 
-## 8 - Bonus: Create an OpenShift Route to expose web application in "./infra/kustomize/overlays/prod"
+## 8 - Bonus: Create an OpenShift Route to expose web application in "./infra/kustomize/overlays/prod" :apple:
 
 Example: (Modify name, namespace ('prod'), and host)
 
@@ -110,12 +110,9 @@ spec:
   wildcardPolicy: None
 ```
 
-## Delete your bootstrap application
+## Delete your bootstrap application :fire:
 
 Delete your bootstrap application in ArgoCD ('Delete')
-
-
-
 
 
 
